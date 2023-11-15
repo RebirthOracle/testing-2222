@@ -1,0 +1,17 @@
+
+
+parameters:
+  - name: HelloWorld
+    default: 'Build Job'
+    type: string
+    displayName: 'Display Name for the Job'
+    
+
+jobs:
+- job: Build
+  displayName: ${{ parameters.HelloWorld }}
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: echo 'Hello, World!'
+    displayName: 'Print Hello World'
